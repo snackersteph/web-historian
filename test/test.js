@@ -15,7 +15,7 @@ archive.initialize({
 
 var request = supertest.agent(server);
 
-xdescribe('server', function() {
+describe('server', function() {
   describe('GET /', function () {
     it('should return the content of index.html', function (done) {
       // just assume that if it contains an <input> tag its index.html
@@ -89,7 +89,7 @@ describe('archive helpers', function() {
     });
   });
 
-  xdescribe('#isUrlInList', function () {
+  describe('#isUrlInList', function () {
     it('should check if a url is in the list', function (done) {
       var urlArray = ['example1.com', 'example2.com'];
       fs.writeFileSync(archive.paths.list, urlArray.join('\n'));
@@ -109,7 +109,7 @@ describe('archive helpers', function() {
     });
   });
 
-  xdescribe('#addUrlToList', function () {
+  describe('#addUrlToList', function () {
     it('should add a url to the list', function (done) {
       var urlArray = ['example1.com', 'example2.com\n'];
       fs.writeFileSync(archive.paths.list, urlArray.join('\n'));
@@ -123,7 +123,7 @@ describe('archive helpers', function() {
     });
   });
 
-  xdescribe('#isUrlArchived', function () {
+  describe('#isUrlArchived', function () {
     it('should check if a url is archived', function (done) {
       fs.writeFileSync(archive.paths.archivedSites + '/www.example.com', 'blah blah');
 
@@ -155,4 +155,3 @@ describe('archive helpers', function() {
     });
   });
 });
-
